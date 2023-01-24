@@ -4,9 +4,9 @@
   
     
     <entry>
-      <title>Linux学习环境搭建</title>
-      <link href="/posts/65036.html"/>
-      <url>/posts/65036.html</url>
+      <title>Linux学习环境搭建(Mac OS)</title>
+      <link href="/posts/24714.html"/>
+      <url>/posts/24714.html</url>
       
         <content type="html"><![CDATA[<h1 id="Linux环境配置-ubuntu"><a href="#Linux环境配置-ubuntu" class="headerlink" title="Linux环境配置(ubuntu)"></a>Linux环境配置(ubuntu)</h1><h2 id="安装ubuntu"><a href="#安装ubuntu" class="headerlink" title="安装ubuntu"></a>安装ubuntu</h2><h3 id="安装parallels-desktop"><a href="#安装parallels-desktop" class="headerlink" title="安装parallels desktop"></a>安装parallels desktop</h3><h3 id="梯子"><a href="#梯子" class="headerlink" title="梯子"></a>梯子</h3><ul><li>虽然梯子一直是国内大家都不是很乐意提及的东西，但是一个技术人员最好还是有一个梯子，他能帮你省去很多麻烦的事情。一下的一些配置很多是建立在有梯子的基础之上的，如果没有梯子，可以考虑使用国内的镜像源</li></ul><h2 id="常见环境配置"><a href="#常见环境配置" class="headerlink" title="常见环境配置"></a>常见环境配置</h2><h3 id="更新系统软件环境"><a href="#更新系统软件环境" class="headerlink" title="更新系统软件环境"></a>更新系统软件环境</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">--打开终端</span><br><span class="line">&#x27;⌃&#x27;+&#x27;⌥&#x27;+&#x27;T&#x27;</span><br><span class="line"></span><br><span class="line">--更新系统的的apt资源</span><br><span class="line">sudo apt-get update </span><br><span class="line"></span><br><span class="line">--软件更新(或者在图形界面点击软件更新)</span><br><span class="line">sudo apt-get upgrade </span><br><span class="line"></span><br><span class="line">--设备重启</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure><h3 id="中文环境配置"><a href="#中文环境配置" class="headerlink" title="中文环境配置"></a>中文环境配置</h3><ul><li>中文语言包下载</li></ul>]]></content>
       
