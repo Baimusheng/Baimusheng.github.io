@@ -1,4 +1,4 @@
-http://example.com/posts/0.html
+http://example.com/posts/25091.html
 http://example.com/posts/11093.html
 http://example.com/posts/24714.html
 http://example.com/game/index.html
@@ -10,3 +10,4 @@ http://example.com/tags/%E5%AD%A6%E4%B9%A0/
 http://example.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
 http://example.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/
 http://example.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Linux%E6%90%AD%E5%BB%BA/
+http://example.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/
