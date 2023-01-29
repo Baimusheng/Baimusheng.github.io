@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>TCP_IP网络编程基础</title>
+      <link href="/posts/16214.html"/>
+      <url>/posts/16214.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul><li>本篇文章旨在记录我学习《TCP&#x2F;IP网络编程》这本书的一些知识点，我虽没读过其他网络编程书籍，但这本书文章内容的风趣幽默，以及相关知识点的详细程度，我认为，这绝对是一本入门的好书</li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E4%B9%A6%E7%B1%8D%E5%B0%81%E9%9D%A2.JPG" alt="书籍封面"></p><h1 id="重要概念"><a href="#重要概念" class="headerlink" title="重要概念"></a>重要概念</h1><h2 id="什么是网络编程"><a href="#什么是网络编程" class="headerlink" title="什么是网络编程"></a>什么是网络编程</h2><ul><li>网络编程就是编写程序使两台计算机之间可以相互交换数据</li></ul><h2 id="什么是套接字"><a href="#什么是套接字" class="headerlink" title="什么是套接字"></a>什么是套接字</h2><ul><li>可以把套接字比作一个插头，这也是网上一个大多数人接受的比喻，其实非常的形象，插头是套接字，电网是因特网，计算机把自己的接入到这个插座上，就相当于接入到了网络</li></ul><h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="底层文件访问"><a href="#底层文件访问" class="headerlink" title="底层文件访问"></a>底层文件访问</h3><ul><li>与标准无关的操作系统独立提供的，不是ANSI的文件操作(fopen,fclose)，而是LInux提供的文件操作</li></ul><h3 id="文件描述符"><a href="#文件描述符" class="headerlink" title="文件描述符"></a>文件描述符</h3><ul><li>Llinux有以下的文件描述符号</li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6.jpeg" alt="文件描述符"></p><h2 id="数据边界"><a href="#数据边界" class="headerlink" title="数据边界"></a>数据边界</h2><ul><li>TCP使用的是流式传输，流式传输是没有数据边界问题的，因为流式传输，对服务端来说并不知道此时在缓冲区内的数据是一次请求还是两次请求(客户端是将数据发送到一个缓冲区中)，就会出现一次性读出多条数据，造成读取解析错误</li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E7%BC%93%E5%86%B2%E5%8C%BA.png" alt="缓冲区"></p><h2 id="地址族-IPv4"><a href="#地址族-IPv4" class="headerlink" title="地址族(IPv4)"></a>地址族(IPv4)</h2><ul><li>IPV4(4字节地址族)</li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/IPV4%E5%9C%B0%E5%9D%80%E6%97%8F.jpeg" alt="IPV4地址族"></p><p><u>IPV4的地址族可以分为网络地址和主机地址，也就是计网中提到的网络名和主机名，宏观上是通过网络地址发送到交换机或者路由器中，在根据主机地址发送到相应的主机</u></p><pre><code>1. A类地址首字节： 0～1272. B类地址首字节： 128～1913. C类地址首字节： 192～223</code></pre><ul><li>IPV6(16字节地址族)</li></ul><h2 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h2><ul><li><p>端口号的简单目的是将数据传输给一台计算机中的不通的设备，操作系统的操作就是将不同的数据根据端口号传给不通的端口的套接字</p></li><li><p><strong>不同协议的端口号可以重复</strong></p><ul><li>可以简单的理解为，端口的唯一标识不是端口号，而是端口和协议的组合，应用程序和协议的寻址靠的就是这个组合</li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E7%9B%AE%E7%9A%84%E4%B8%BB%E6%9C%BA%E6%95%B0%E6%8D%AE%E5%88%86%E7%94%A8%E8%BF%87%E7%A8%8B.png" alt="目的主机数据分用过程"></p></li><li><p>端口号和协议之间的关系涉及到计算机网络和操作系统，这里做简单描述</p></li></ul><h2 id="计算机数据保存方式"><a href="#计算机数据保存方式" class="headerlink" title="计算机数据保存方式"></a>计算机数据保存方式</h2><h3 id="大端存储"><a href="#大端存储" class="headerlink" title="大端存储"></a>大端存储</h3><ul><li>高位字节存放到低位地址</li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E5%A4%A7%E7%AB%AF%E5%AD%98%E5%82%A8.jpeg" alt="大端存储"></p><h3 id="小端存储"><a href="#小端存储" class="headerlink" title="小端存储"></a>小端存储</h3><ul><li>高位字节存放到高位地址</li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E5%B0%8F%E7%AB%AF%E5%AD%98%E5%82%A8.jpeg" alt="小端存储"></p><p>目前主流inter系列CPU采用的是小端存储</p><h2 id="字节序"><a href="#字节序" class="headerlink" title="字节序"></a>字节序</h2><h3 id="网络字节序"><a href="#网络字节序" class="headerlink" title="网络字节序"></a>网络字节序</h3><ul><li>为了使得数据保持一致。在网络传输数据的时候，应统一为网络字节序，即统一为大端序</li></ul><h3 id="主机字节序"><a href="#主机字节序" class="headerlink" title="主机字节序"></a>主机字节序</h3><ul><li>即是计算机内部的存储数据的形式，有大端序和小端序的区别</li></ul><h2 id="INADDR-ANY"><a href="#INADDR-ANY" class="headerlink" title="INADDR_ANY"></a>INADDR_ANY</h2><ul><li>其实就是表示inet_addr(“0.0.0.0”)这个地址</li><li>当服务器的监听地址是这个地址的时候，设置的是服务器的ip地址，且表示这台计算机上所有网卡的ip地址，均可以用来做服务器的ip地址</li></ul><h2 id="TCP-x2F-IP协议栈"><a href="#TCP-x2F-IP协议栈" class="headerlink" title="TCP&#x2F;IP协议栈"></a>TCP&#x2F;IP协议栈</h2><ul><li>目的是实现通过因特网进行数据的有效传输</li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/TCP_IP%E5%8D%8F%E8%AE%AE%E6%A0%88.jpeg" alt="TCP_IP协议栈"></p><ul><li><p>计网相关的知识，这里做简要的介绍</p></li><li><p>链路层</p><ul><li>通过7层协议栈来解释，就是包括了物理层和数据链路层，这里面规定了一些网络标准</li></ul></li><li><p>IP层</p><ul><li>主要是帮我们确定数据传输的路径问题，IP层无法应对数据错误</li></ul></li><li><p>TCP&#x2F;UDP层</p><ul><li>也可以表示的是传输层，TCP的面向连接，UDP的面向消息，以及TCP的3次握手都在这里</li></ul></li><li><p>应用层，相当于一些网络程序，通过套接字进行网络编程就是设计并实现应用层协议</p></li></ul><h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="文件操作相关函数"><a href="#文件操作相关函数" class="headerlink" title="文件操作相关函数"></a>文件操作相关函数</h2><h3 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h3><ul><li><strong>函数以及相应入参</strong></li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/open.jpeg" alt="open"></p><ul><li><strong>文件打开模式</strong></li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E6%96%87%E4%BB%B6%E6%89%93%E5%BC%80%E6%A8%A1%E5%BC%8F.jpeg" alt="文件打开模式"></p><h3 id="close"><a href="#close" class="headerlink" title="close()"></a>close()</h3><ul><li>函数以及相应的入参</li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/close.jpeg" alt="close"></p><ul><li>fd(<a href="#%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6">文件描述符</a>)</li></ul><h3 id="write"><a href="#write" class="headerlink" title="write()"></a>write()</h3><ul><li><strong>函数以及相应的入参</strong></li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/write.jpeg" alt="write"></p><h3 id="read"><a href="#read" class="headerlink" title="read()"></a>read()</h3><ul><li><strong>函数以及相应的入参</strong></li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/read.jpeg" alt="read"></p><h2 id="套接字相关函数"><a href="#套接字相关函数" class="headerlink" title="套接字相关函数"></a>套接字相关函数</h2><h3 id="socket"><a href="#socket" class="headerlink" title="socket()"></a>socket()</h3><ul><li><strong>函数以及相应入参</strong></li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/socket.jpeg" alt="socket"></p><ul><li><strong>domain(协议族:Protocol Family)</strong></li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E5%8D%8F%E8%AE%AE%E6%97%8F.jpeg" alt="协议族"></p><ul><li><p><strong>type(套接字类型)</strong></p><ul><li><u>面向连接(SOCK_STRESM)</u>       —-TCP协议</li></ul><ol><li><p>传输过程中数据不会消失</p></li><li><p>按序传输数据</p></li><li><p>传输的数据不存在 <a href="#%E6%95%B0%E6%8D%AE%E8%BE%B9%E7%95%8C">数据边界 </a>    —-UDP协议</p></li></ol><ul><li><u>面向消息(SOCK_DGRAM)</u></li></ul><ol><li>强调快速传输而非传输顺序</li><li>传输的数据可能丢失也可能销毁</li><li>传输的数据有数据边界</li><li>限制每次传输的大小</li></ol></li><li><p><strong>protpcol(计算机通信中使用的协议信息)</strong></p><ul><li>其实这个很好理解，domain只是规定了使用了什么协议，比如说ipv4协议，就有面向连接和面向消息这两种数据传输方式，此时就应该用第三个参数来规定数据是如何传输的</li></ul></li></ul><h3 id="bind"><a href="#bind" class="headerlink" title="bind()"></a>bind()</h3><ul><li>将初始化的地址信息分配给套接字</li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/bind1.jpeg" alt="bind1"></p><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/bind2.jpeg" alt="bind2"></p><h3 id="listen"><a href="#listen" class="headerlink" title="listen()"></a>listen()</h3><ul><li>调用listen()会让套接字进入可连接的状态</li><li>注意，想要进入连接请求的套接字就一定是服务器的套接字，应为服务器的套接字相当于是接受外面消息的入口</li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/listen.jpeg" alt="listen"></p><ul><li>backlog表示一次性能接受多少个连接请求</li></ul><h3 id="accept"><a href="#accept" class="headerlink" title="accept()"></a>accept()</h3><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/accept%E5%87%BD%E6%95%B0.jpeg" alt="accept函数"></p><ul><li>accept返回的套接字是用来接受消息的，并不是服务器套接字，是临时创建的</li><li>调用accept函数从队头中取出一个请求来进行数据交换</li><li>accept函数如果没有接受到connect消息会进入阻塞状态</li></ul><h3 id="connect"><a href="#connect" class="headerlink" title="connect()"></a>connect()</h3><h2 id="字节序转换相关函数"><a href="#字节序转换相关函数" class="headerlink" title="字节序转换相关函数"></a>字节序转换相关函数</h2><ul><li>很好记忆，h表示的host，n表示的net，s表示的unsigned short，long 表示的是 unsigned long </li><li>short类型用于2字节的端口转换，long类型用于4字节的ip转换，简直完美～</li></ul><h3 id="htons"><a href="#htons" class="headerlink" title="htons"></a>htons</h3><ul><li><p>unsigned short htons(unsigned short)</p></li><li><p>把unsigned short类型的数据从主机字节序转换成网络字节序</p></li></ul><h3 id="ntohs"><a href="#ntohs" class="headerlink" title="ntohs"></a>ntohs</h3><ul><li><p>unsigned short ntohs(unsigned short)</p></li><li><p>把unsigned short类型的数据从网络字节序转换成主机字节序</p></li></ul><h3 id="htonl"><a href="#htonl" class="headerlink" title="htonl"></a>htonl</h3><ul><li><p>unsigned long htonl(unsigned long)</p></li><li><p>把unsigned long类型的数据从主机字节序转换成网络字节序</p></li></ul><h3 id="ntohl"><a href="#ntohl" class="headerlink" title="ntohl"></a>ntohl</h3><ul><li><p>unsigned long ntohl(unsigned long)</p></li><li><p>把unsigned long类型的数据从网络字节序转换成主机字节序</p></li></ul><h2 id="字符串和整数相互转换函数"><a href="#字符串和整数相互转换函数" class="headerlink" title="字符串和整数相互转换函数"></a>字符串和整数相互转换函数</h2><ul><li>两个函数相当好用，应为正好第二个参数是in_addr结构体</li></ul><h3 id="inet-aton"><a href="#inet-aton" class="headerlink" title="inet_aton"></a>inet_aton</h3><ul><li>函数以及相关入参</li></ul><p><img src="/Users/clhao/Desktop/inet_aton.jpeg" alt="inet_aton"></p><h3 id="inet-ntoa"><a href="#inet-ntoa" class="headerlink" title="inet_ntoa"></a>inet_ntoa</h3><ul><li>函数以及相关入参</li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/inet_ntoa.jpeg" alt="inet_ntoa"></p><h1 id="表示IPV4的结构体"><a href="#表示IPV4的结构体" class="headerlink" title="表示IPV4的结构体"></a>表示IPV4的结构体</h1><ul><li>注意，这个结构体只是用来表示IPV4地址</li><li>sockaddr_in结构体作为地址信息传递给<a href="#bind()">bind函数</a></li></ul><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="type">sa_family_t</span>  sin_family;<span class="comment">//地址族</span></span><br><span class="line">    <span class="type">uint16_t</span>  sin_port;<span class="comment">//16位 Tcp/Udp端口号</span></span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">in_addr</span>  <span class="title">sin_addr</span>;</span><span class="comment">//32位ip地址</span></span><br><span class="line">    <span class="type">char</span>sin_zero[<span class="number">8</span>];<span class="comment">//不使用</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><ul><li>sockaddr_in结构体中的in_addr结构体，用来存储32位的ip地址</li></ul><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">in_addr</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="type">in_addr_t</span> s_addr;<span class="comment">//32位ip地址</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><ul><li>sockaddr结构体</li></ul><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">sockaddr</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="type">sa_family_t</span>  sin_family;<span class="comment">//地址族</span></span><br><span class="line"><span class="type">char</span>  sa_data[<span class="number">14</span>];<span class="comment">//地址信息</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h2 id="sin-family"><a href="#sin-family" class="headerlink" title="sin_family"></a>sin_family</h2><ul><li><p>地址族信息，注意和<a href="#socket">socket</a>中的domain做区别</p></li><li><p>为什么scokaddr_in是表示ipv4的结构体，里面还是要有地址族协议？因为必须保持结构一致</p></li><li><p>sa_data中保存的应该是ip地址和端口，其余部分应该是0，这也是sin_zero存在的意义,不然无法进行数据解析</p></li></ul><h2 id="sin-port"><a href="#sin-port" class="headerlink" title="sin_port"></a>sin_port</h2><ul><li>用<a href="#%E7%BD%91%E7%BB%9C%E5%AD%97%E8%8A%82%E5%BA%8F">网络字节序</a>来存储端口号</li></ul><h2 id="sin-addr"><a href="#sin-addr" class="headerlink" title="sin_addr"></a>sin_addr</h2><ul><li>用<a href="#%E7%BD%91%E7%BB%9C%E5%AD%97%E8%8A%82%E5%BA%8F">网络字节序</a>来存储ip地址</li></ul><h2 id="sin-zero"><a href="#sin-zero" class="headerlink" title="sin_zero"></a>sin_zero</h2><ul><li>为了填充，使结构体保持一致，都是14个字节</li></ul><h1 id="客户端和服务器端的实现"><a href="#客户端和服务器端的实现" class="headerlink" title="客户端和服务器端的实现"></a>客户端和服务器端的实现</h1><ul><li>这里就是整本书最庞大的篇幅了～</li><li><strong>客户端和服务器端的函数调用顺序</strong></li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TCP_IP%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%92%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E7%9A%84%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E5%85%B3%E7%B3%BB.jpeg" alt="客户端和服务器端的函数调用关系"></p><h2 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h2><h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络编程 </category>
+          
+          <category> TCP_IP网络编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网络编程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Neovim配置</title>
       <link href="/posts/56752.html"/>
       <url>/posts/56752.html</url>
@@ -115,17 +142,6 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>动漫</title>
       <link href="/comic/index.html"/>
       <url>/comic/index.html</url>
@@ -148,9 +164,9 @@
     
     
     <entry>
-      <title>标签</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -162,6 +178,17 @@
       <title>第九艺术</title>
       <link href="/game/index.html"/>
       <url>/game/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
