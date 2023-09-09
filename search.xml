@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>VSCODE环境搭建</title>
+      <link href="/post/3.html"/>
+      <url>/post/3.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="相关地址"><a href="#相关地址" class="headerlink" title="相关地址"></a>相关地址</h1><ul><li>MinGW<ul><li>官网地址:<a href="https://sourceforge.net/projects/mingw-w64/files/">https://sourceforge.net/projects/mingw-w64/files/</a></li><li>百度网盘:<a href="https://pan.baidu.com/s/1_ppkYHPPbUWSpNNcBEPwLQ">https://pan.baidu.com/s/1_ppkYHPPbUWSpNNcBEPwLQ</a> 提取码：2790</li></ul></li><li>vscode<ul><li>官网地址:<a href="https://code.visualstudio.com/">https://code.visualstudio.com</a></li><li>网盘地址:<a href="https://pan.baidu.com/s/1nS5C98K5bS7zXmpBcIrIsg">https://pan.baidu.com/s/1nS5C98K5bS7zXmpBcIrIsg</a> 提取码：2790</li></ul></li></ul><h1 id="Windows编译环境"><a href="#Windows编译环境" class="headerlink" title="Windows编译环境"></a>Windows编译环境</h1><h2 id="C-C"><a href="#C-C" class="headerlink" title="C&#x2F;C++"></a>C&#x2F;C++</h2><h3 id="核心步骤"><a href="#核心步骤" class="headerlink" title="核心步骤"></a>核心步骤</h3><h4 id="安装配置C编译器器"><a href="#安装配置C编译器器" class="headerlink" title="安装配置C编译器器"></a>安装配置C编译器器</h4><ul><li>下载MinGw<br>✨就是我们常见的GCC编译器，可以到上述[[#相关地址|地址]]中下载，但是通常会下载的很慢，需要爬梯子，上面给的网盘版本是8.1.0<br><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E4%B8%8B%E8%BD%BDMinGw2.png"></li><li>添加编译器环境变量<ul><li>将下载的MinGw解压到一个文件夹下面<br>   <img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E8%A7%A3%E5%8E%8B.png"></li><li>找到bin文件目录<br>   <img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E5%A4%8D%E5%88%B6bin%E7%9B%AE%E5%BD%95.png"></li><li>右键此电脑，点击属性<br>   <img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E6%AD%A4%E7%94%B5%E8%84%91%E5%B1%9E%E6%80%A7.png"></li><li>选择高级系统设置<br>   <img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E6%AD%A4%E7%94%B5%E8%84%91%E5%B1%9E%E6%80%A7.png"></li><li>点击环境变量<br>   <img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E9%80%89%E6%8B%A9%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.png"></li><li>编辑Path<br>   <img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E7%BC%96%E8%BE%91Path.png"></li><li>将复制的bin文件路径复制进去<br>   ✨没试过带中文路径的会怎么样，但是最好不要带<br>   <img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E5%A4%8D%E5%88%B6%E8%B7%AF%E5%BE%84.png"></li><li>一路点&#x3D;&#x3D;确定&#x3D;&#x3D;退出，环境变量就配置完成了<br>   ✨注意一定要点完确认</li></ul></li><li>验证是否配置成功<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -version(gcc -v)</span><br></pre></td></tr></table></figure><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E6%A3%80%E9%AA%8C%E6%98%AF%E5%90%A6%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F.png"></li></ul><h4 id="安装核心插件"><a href="#安装核心插件" class="headerlink" title="安装核心插件"></a>安装核心插件</h4><ul><li>中文插件<br>   安装完成之后重启一下Vscode就可以了<br><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E6%8F%92%E4%BB%B6.png"></li><li>C&#x2F;C++插件<br><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E5%AE%89%E8%A3%85C%E6%8F%92%E4%BB%B6.png"></li></ul><h4 id="相关配置"><a href="#相关配置" class="headerlink" title="相关配置"></a>相关配置</h4><ul><li>打开一个代码工程<br><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E6%89%93%E5%BC%80%E4%BB%A3%E7%A0%81%E5%B7%A5%E7%A8%8B.png"><br><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E9%80%89%E6%8B%A9%E4%BF%A1%E4%BB%BB.png"></li><li>创建一个.c文件，并写一段c程序<br><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%B9%B6%E7%BC%96%E5%86%99%E7%A8%8B%E5%BA%8F.png"></li><li>配置c_cpp_properties.json文件<br> ✨这个文件的作用是配置编译器的路径以及一些智能代码相关的配置文件<ul><li>用ctrl + shift + p 打开UI配置<br>   <img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E7%BC%96%E8%BE%91UI%E9%85%8D%E7%BD%AE.png"></li><li>对c_cpp_properties.json进行相应的配置<br>   <img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B61.png"></li></ul></li><li>配置task.json文件<br>  ✨编译器相关的配置文件，比如编译指令<ul><li>用ctrl+shift+p生成活动文件<br>   <img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E9%85%8D%E7%BD%AE%E9%BB%98%E8%AE%A4%E7%94%9F%E6%88%90%E4%BB%BB%E5%8A%A1.png"><br>   <img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E7%94%9F%E6%88%90%E6%B4%BB%E5%8A%A8%E6%96%87%E4%BB%B6.png"></li><li>对task.json文件进行配置<br>自动更具编译器生成的文件，不用多加配置<br>   <img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/task%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.png"></li></ul></li><li>配置launch.json文件<br>  ✨主要是配置调试器，调试器的路径、编译生成的可执行文件的路径<ul><li>创建launch.json文件<br>   <img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E9%80%89%E6%8B%A9%E8%B0%83%E8%AF%95%E5%99%A82.png"></li><li>配置launch.json文件<br>   <img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/launch%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE.png"></li><li>验证调试功能<br>   <img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E6%96%AD%E7%82%B9%E6%89%A7%E8%A1%8C.png"></li></ul></li></ul><h1 id="其他配置"><a href="#其他配置" class="headerlink" title="其他配置"></a>其他配置</h1><h2 id="插件推荐"><a href="#插件推荐" class="headerlink" title="插件推荐"></a>插件推荐</h2><h3 id="tabout插件"><a href="#tabout插件" class="headerlink" title="tabout插件"></a>tabout插件</h3><ul><li>超级好用的插件，他可以让你按tab键就能够跳出大括号、引号等，解放双手去按方向键<br><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/tabout%E6%8F%92%E4%BB%B6.png"></li></ul><h3 id="vscode-icons插件"><a href="#vscode-icons插件" class="headerlink" title="vscode-icons插件"></a>vscode-icons插件</h3><ul><li>可以换一些文件的图标，可有可无的插件，不过有时候图标好看对心情也很重要，可能吧~<br><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/vscode-icon.png"></li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/icon.png"></p><h3 id="TODO插件"><a href="#TODO插件" class="headerlink" title="TODO插件"></a>TODO插件</h3><ul><li>我用的是todotree，让你不要忘记检查代码<br><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/todotree.png"><br><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/todotree2.png"></li></ul><h3 id="主题插件"><a href="#主题插件" class="headerlink" title="主题插件"></a>主题插件</h3><ul><li>虽然觉得vscode自带的就很好看了，相比source insight来说，但是不装主题是没有灵魂的，one dark pro 是黑色的，Atom One Light 是白色的，以前喜欢黑的，但是被公司调教之后，觉得白色很舒服<br><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E4%B8%BB%E9%A2%98.png"></li></ul><h3 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h3><ul><li>力扣插件，额，平时很少用，一般就直接上网站上去刷，有时候图方便会看看<br><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/vscode%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/LeetCode.png"></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 环境搭建 </category>
+          
+          <category> VSCODE环境搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+            <tag> Linux </tag>
+            
+            <tag> Ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Ubuntu虚拟机环境搭建</title>
       <link href="/post/2.html"/>
       <url>/post/2.html</url>
@@ -53,11 +84,11 @@
       
         <tags>
             
-            <tag> 学习 </tag>
-            
-            <tag> 效率 </tag>
+            <tag> Butterfly </tag>
             
             <tag> 收集 </tag>
+            
+            <tag> 效率 </tag>
             
         </tags>
       
@@ -80,11 +111,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/custom.css"/>
-      <url>/css/custom.css</url>
+      <title>电影</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
       
-        <content type="html"><![CDATA[/*top-img黑色透明玻璃效果移除，不建议加，除非你执着于完全一图流或者背景图对比色明显 */#page-header:not(.not-top-img):before {    background-color: transparent !important;  }    /* 首页文章卡片 */  #recent-posts > .recent-post-item {    background: rgba(255, 255, 255, 0.9);  }    /* 首页侧栏卡片 */  #aside-content .card-widget {    background: rgba(255, 255, 255, 0.9);  }    /* 文章页面正文背景 */  div#post {    background: rgba(255, 255, 255, 0.9);  }    /* 分页页面 */  div#page {    background: rgba(255, 255, 255, 0.9);  }    /* 归档页面 */  div#archive {    background: rgba(255, 255, 255, 0.9);  }    /* 标签页面 */  div#tag {    background: rgba(255, 255, 255, 0.9);  }    /* 分类页面 */  div#category {    background: rgba(255, 255, 255, 0.9);  }    /*夜间模式伪类遮罩层透明*/  [data-theme="dark"] #recent-posts > .recent-post-item {    background: #121212;  }    [data-theme="dark"] .card-widget {    background: #121212 !important;  }    [data-theme="dark"] div#post {    background: #121212 !important;  }    [data-theme="dark"] div#tag {    background: #121212 !important;  }    [data-theme="dark"] div#archive {    background: #121212 !important;  }    [data-theme="dark"] div#page {    background: #121212 !important;  }    [data-theme="dark"] div#category {    background: #121212 !important;  }    [data-theme="dark"] div#category {    background: transparent !important;  }  /* 页脚透明 */  #footer {    background: transparent !important;  }    /* 头图透明 */  #page-header {    background: transparent !important;  }    #rightside > div > button {    border-radius: 5px;  }]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -102,11 +133,11 @@
     
     
     <entry>
-      <title>电影</title>
-      <link href="/movies/index.html"/>
-      <url>/movies/index.html</url>
+      <title></title>
+      <link href="/css/custom.css"/>
+      <url>/css/custom.css</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[/*top-img黑色透明玻璃效果移除，不建议加，除非你执着于完全一图流或者背景图对比色明显 */#page-header:not(.not-top-img):before {    background-color: transparent !important;  }    /* 首页文章卡片 */  #recent-posts > .recent-post-item {    background: rgba(255, 255, 255, 0.9);  }    /* 首页侧栏卡片 */  #aside-content .card-widget {    background: rgba(255, 255, 255, 0.9);  }    /* 文章页面正文背景 */  div#post {    background: rgba(255, 255, 255, 0.9);  }    /* 分页页面 */  div#page {    background: rgba(255, 255, 255, 0.9);  }    /* 归档页面 */  div#archive {    background: rgba(255, 255, 255, 0.9);  }    /* 标签页面 */  div#tag {    background: rgba(255, 255, 255, 0.9);  }    /* 分类页面 */  div#category {    background: rgba(255, 255, 255, 0.9);  }    /*夜间模式伪类遮罩层透明*/  [data-theme="dark"] #recent-posts > .recent-post-item {    background: #121212;  }    [data-theme="dark"] .card-widget {    background: #121212 !important;  }    [data-theme="dark"] div#post {    background: #121212 !important;  }    [data-theme="dark"] div#tag {    background: #121212 !important;  }    [data-theme="dark"] div#archive {    background: #121212 !important;  }    [data-theme="dark"] div#page {    background: #121212 !important;  }    [data-theme="dark"] div#category {    background: #121212 !important;  }    [data-theme="dark"] div#category {    background: transparent !important;  }  /* 页脚透明 */  #footer {    background: transparent !important;  }    /* 头图透明 */  #page-header {    background: transparent !important;  }    #rightside > div > button {    border-radius: 5px;  }]]></content>
       
     </entry>
     
