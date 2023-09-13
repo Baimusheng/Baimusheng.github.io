@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>Hexo博客搭建进阶教程</title>
+      <link href="/post/4.html"/>
+      <url>/post/4.html</url>
+      
+        <content type="html"><![CDATA[<p>✨本来想一部到位讲完博客的搭建的，但是感觉东西越来越多，所有后面如果有进阶的优化我会在这篇文章进行更新，如果还没有Hexo博客请先看[[Hexo简易博客搭建教程|基础搭建教程]]。</p><h1 id="博客优化"><a href="#博客优化" class="headerlink" title="博客优化"></a>博客优化</h1><h2 id="音乐馆界面"><a href="#音乐馆界面" class="headerlink" title="音乐馆界面"></a>音乐馆界面</h2><p> ✨哎，实在想做一个漂亮的页面，但是作为一个C程序员无奈没学过前端，而且拷贝别人代码让我有一种偷窃的感觉，现在开始学习前端~</p><p>&#x3D;&#x3D;普通版:&#x3D;&#x3D;</p><ul><li>安装aplayer插件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-tag-aplayer --save</span><br></pre></td></tr></table></figure></li><li>在_config.yml打开MetingJS使能<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">aplayer:</span></span><br><span class="line"><span class="attr">meting:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li><li>开启主题配置中的aplayerInject<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">aplayerInjext:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li><li>在音乐的index.md文件中添加如下命令<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">音乐馆</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2021-04-24 21:41:30</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="string">&lt;!--</span>  <span class="string">APlayer</span> <span class="string">--&gt;</span></span><br><span class="line"><span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css&quot;&gt;</span></span><br><span class="line"><span class="string">&lt;script</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js&quot;&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;!--</span>  <span class="string">MetingJS</span> <span class="string">--&gt;</span></span><br><span class="line"><span class="string">&lt;script</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js&quot;&gt;&lt;/script&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&lt;font</span> <span class="string">size=&quot;5&quot;</span> <span class="string">face</span> <span class="string">=</span> <span class="string">&quot;华文行楷&quot;</span> <span class="string">color=&quot;#A0EEE1&quot;&gt;第九艺术&lt;/font&gt;</span></span><br><span class="line"><span class="string">&lt;meting-js</span></span><br><span class="line">    <span class="string">server=&quot;netease&quot;</span></span><br><span class="line">    <span class="string">type=&quot;playlist&quot;</span></span><br><span class="line">    <span class="string">id=&quot;8725642891&quot;&gt;</span></span><br><span class="line"><span class="string">&lt;/meting-js&gt;</span></span><br><span class="line"><span class="string">&lt;font</span> <span class="string">size=&quot;5&quot;</span> <span class="string">face</span> <span class="string">=</span> <span class="string">&quot;华文行楷&quot;</span> <span class="string">color=&quot;#A0EEE1&quot;&gt;吾爱之粤语&lt;/font&gt;</span></span><br><span class="line"><span class="string">&lt;meting-js</span></span><br><span class="line">    <span class="string">server=&quot;netease&quot;</span></span><br><span class="line">    <span class="string">type=&quot;playlist&quot;</span></span><br><span class="line">    <span class="string">id=&quot;8188260516&quot;&gt;</span></span><br><span class="line"><span class="string">&lt;/meting-js&gt;</span></span><br><span class="line"><span class="string">&lt;font</span> <span class="string">size=&quot;5&quot;</span> <span class="string">face</span> <span class="string">=</span> <span class="string">&quot;华文行楷&quot;</span> <span class="string">color=&quot;#A0EEE1&quot;&gt;吾爱之国语&lt;/font&gt;</span></span><br><span class="line"><span class="string">&lt;meting-js</span></span><br><span class="line">    <span class="string">server=&quot;netease&quot;</span></span><br><span class="line">    <span class="string">type=&quot;playlist&quot;</span></span><br><span class="line">    <span class="string">id=&quot;8725638486&quot;&gt;</span></span><br><span class="line"><span class="string">&lt;/meting-js&gt;</span></span><br><span class="line"><span class="string">&lt;!--</span></span><br><span class="line">    <span class="number">1</span><span class="string">.[必须]id:</span>               <span class="string">歌单ID</span></span><br><span class="line">    <span class="number">2</span><span class="string">.[必须]type</span>              <span class="string">类型值:playlist,song..</span></span><br><span class="line">    <span class="number">3</span><span class="string">.[必须]server</span>            <span class="string">服务平台:netease(网易云)</span></span><br><span class="line">    <span class="number">4</span><span class="string">.[可选]theme</span>             <span class="string">主题颜色</span></span><br><span class="line">    <span class="number">5</span><span class="string">.[可选]volume</span>            <span class="string">音量</span></span><br><span class="line">    <span class="number">6</span><span class="string">.[可选]autoplay</span>          <span class="string">自动播放</span></span><br><span class="line">    <span class="number">7</span><span class="string">.[可选]fixed</span>             <span class="string">固定模式</span></span><br><span class="line">    <span class="number">8</span><span class="string">.[可选]mini</span>              <span class="string">迷你模式</span></span><br><span class="line">    <span class="number">9</span><span class="string">.[可选]loop</span>              <span class="string">循环</span></span><br><span class="line">    <span class="number">10</span><span class="string">.[可选]order</span>            <span class="string">顺序</span></span><br><span class="line">    <span class="number">11</span><span class="string">.[可选]preload</span>          <span class="string">加载</span></span><br><span class="line">    <span class="number">12</span><span class="string">.[可选]mutex</span>            <span class="string">限制</span></span><br><span class="line">    <span class="number">13</span><span class="string">.[可选]lrc-type</span>         <span class="string">歌词</span></span><br><span class="line">    <span class="number">14</span><span class="string">.[可选]list-folded</span>      <span class="string">列表折叠</span></span><br><span class="line">    <span class="number">15</span><span class="string">.[可选]list-max-height</span>  <span class="string">最大高度</span></span><br><span class="line">    <span class="number">16</span><span class="string">.[可选]storage-name</span>     <span class="string">存储名称</span>              </span><br><span class="line"> <span class="string">--&gt;</span></span><br></pre></td></tr></table></figure></li><li>页面展示<br><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/Hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E8%BF%9B%E9%98%B6/%E9%9F%B3%E4%B9%90%E9%A6%86.png" alt="音乐馆"></li></ul><h2 id="博客备案"><a href="#博客备案" class="headerlink" title="博客备案"></a>博客备案</h2><p>✨虽然我本身服务器就在国外，因为是通过github+cloudflare进行搭建的，但是还是准备一个备案的流程吧，万一后面要用到呢(如果阿里云后面整个备案实名，那就真不行了~)</p><ul><li>先到淘宝上买一个备案服务号<br><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/Hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E8%BF%9B%E9%98%B6/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%8F%B7%E8%B4%AD%E4%B9%B0.jpg" alt="阿里云服务号购买"></li><li>开始进行备案<br><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/Hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E8%BF%9B%E9%98%B6/%E7%82%B9%E5%87%BB%E5%A4%87%E6%A1%88.png" alt="点击备案"></li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/Hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E8%BF%9B%E9%98%B6/%E7%82%B9%E5%87%BB%E5%90%8C%E6%84%8F.png" alt="点击同意"></p><ul><li>主办者信息校验<br><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/Hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E8%BF%9B%E9%98%B6/%E4%B8%BB%E5%8A%9E%E8%80%85%E4%BF%A1%E6%81%AF%E6%A0%A1%E9%AA%8C.png" alt="主办者信息校验"></li></ul><p><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/Hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E8%BF%9B%E9%98%B6/%E4%B8%BB%E5%8A%9E%E8%80%85%E4%BF%A1%E6%81%AF%E6%A0%A1%E9%AA%8C2.png" alt="主办者信息校验2"></p><ul><li>网站信息填写<br><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/Hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E8%BF%9B%E9%98%B6/%E7%BD%91%E7%AB%99%E4%BF%A1%E6%81%AF%E5%A1%AB%E5%86%99.png" alt="网站信息填写"><br>✨这里会出现问题，如果你的域名是刚买的，那么就需要等待48小时之后才能进行信息填写，因为此时域名还没过户完成，信息还是之前的域名主人的，如下图所示<br><img src="https://clh-tuchuang.oss-cn-hangzhou.aliyuncs.com/%E5%8D%9A%E5%AE%A2/Hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E8%BF%9B%E9%98%B6/%E7%BD%91%E7%AB%99%E4%BF%A1%E6%81%AF%E5%A1%AB%E5%86%992.png" alt="网站信息填写2"></li></ul><h2 id="博客百度收录"><a href="#博客百度收录" class="headerlink" title="博客百度收录"></a>博客百度收录</h2><h1 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h1><p>✨也算踩过的一些坑吧，浪费了挺多时间</p><h2 id="Hexo网站需不需要备案"><a href="#Hexo网站需不需要备案" class="headerlink" title="Hexo网站需不需要备案"></a>Hexo网站需不需要备案</h2><ul><li>什么是网站备案<ul><li>网站上承载者许多的信息，为了确保网站的运营是合规合法的，企业在搭建网站后，需要对网站进行身份认证</li></ul></li><li>答:不一定需要<ul><li>因为网站备案针对的是服务器在国内的网站，hexo静态博客的服务器归根到底是github，是在国外的，所以不需要网络备案，而且国内的备案，比如阿里云提供的网站备案，是需要购买云服务器的，是要花钱的(巨贵)。。大可不必，但是，你可以到淘宝上买一个备案号，只要10块钱左右，阿里云自己也在卖，100块一个，抽象啊~，当作一个钥匙进行备案。</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 环境搭建 </category>
+          
+          <category> 博客搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Butterfly </tag>
+            
+            <tag> 收集 </tag>
+            
+            <tag> 效率 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>VSCODE环境搭建</title>
       <link href="/post/3.html"/>
       <url>/post/3.html</url>
@@ -100,9 +131,42 @@
     
     
     <entry>
+      <title></title>
+      <link href="/css/custom.css"/>
+      <url>/css/custom.css</url>
+      
+        <content type="html"><![CDATA[/*top-img黑色透明玻璃效果移除，不建议加，除非你执着于完全一图流或者背景图对比色明显 */#page-header:not(.not-top-img):before {    background-color: transparent !important;  }    /* 首页文章卡片 */  #recent-posts > .recent-post-item {    background: rgba(255, 255, 255, 0.9);  }    /* 首页侧栏卡片 */  #aside-content .card-widget {    background: rgba(255, 255, 255, 0.9);  }    /* 文章页面正文背景 */  div#post {    background: rgba(255, 255, 255, 0.9);  }    /* 分页页面 */  div#page {    background: rgba(255, 255, 255, 0.9);  }    /* 归档页面 */  div#archive {    background: rgba(255, 255, 255, 0.9);  }    /* 标签页面 */  div#tag {    background: rgba(255, 255, 255, 0.9);  }    /* 分类页面 */  div#category {    background: rgba(255, 255, 255, 0.9);  }    /*夜间模式伪类遮罩层透明*/  [data-theme="dark"] #recent-posts > .recent-post-item {    background: rgba(18, 18,18, 0.8);  }    [data-theme="dark"] .card-widget {    background: #121212 !important;  }    [data-theme="dark"] div#post {    background: #121212 !important;  }    [data-theme="dark"] div#tag {    background: #121212 !important;  }    [data-theme="dark"] div#archive {    background: #121212 !important;  }    [data-theme="dark"] div#page {    background: #121212 !important;  }    [data-theme="dark"] div#category {    background: #121212 !important;  }    [data-theme="dark"] div#category {    background: transparent !important;  }  /* 页脚透明 */  #footer {    background: transparent !important;  }  /* 头图透明 */  #page-header {    background: transparent !important;  }    #rightside > div > button {    border-radius: 5px;  }]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>音乐馆</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
+      
+        <content type="html"><![CDATA[<!--  APlayer --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><!--  MetingJS --><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><p><font size="5" face = "华文行楷" color="#A0EEE1">第九艺术</font><br><meting-js    server="netease"    type="playlist"    id="8725642891"><br></meting-js><br><font size="5" face = "华文行楷" color="#A0EEE1">吾爱之粤语</font><br><meting-js    server="netease"    type="playlist"    id="8188260516"><br></meting-js><br><font size="5" face = "华文行楷" color="#A0EEE1">吾爱之国语</font><br><meting-js    server="netease"    type="playlist"    id="8725638486"><br></meting-js></p><!--     1.[必须]id:               歌单ID    2.[必须]type              类型值:playlist,song..    3.[必须]server            服务平台:netease(网易云)    4.[可选]theme             主题颜色    5.[可选]volume            音量    6.[可选]autoplay          自动播放    7.[可选]fixed             固定模式    8.[可选]mini              迷你模式    9.[可选]loop              循环    10.[可选]order            顺序    11.[可选]preload          加载    12.[可选]mutex            限制    13.[可选]lrc-type         歌词    14.[可选]list-folded      列表折叠    15.[可选]list-max-height  最大高度    16.[可选]storage-name     存储名称                -->]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>分类</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>电影</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -122,33 +186,11 @@
     
     
     <entry>
-      <title>音乐</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title></title>
-      <link href="/css/custom.css"/>
-      <url>/css/custom.css</url>
+      <link href="/js/music.js"/>
+      <url>/js/music.js</url>
       
-        <content type="html"><![CDATA[/*top-img黑色透明玻璃效果移除，不建议加，除非你执着于完全一图流或者背景图对比色明显 */#page-header:not(.not-top-img):before {    background-color: transparent !important;  }    /* 首页文章卡片 */  #recent-posts > .recent-post-item {    background: rgba(255, 255, 255, 0.9);  }    /* 首页侧栏卡片 */  #aside-content .card-widget {    background: rgba(255, 255, 255, 0.9);  }    /* 文章页面正文背景 */  div#post {    background: rgba(255, 255, 255, 0.9);  }    /* 分页页面 */  div#page {    background: rgba(255, 255, 255, 0.9);  }    /* 归档页面 */  div#archive {    background: rgba(255, 255, 255, 0.9);  }    /* 标签页面 */  div#tag {    background: rgba(255, 255, 255, 0.9);  }    /* 分类页面 */  div#category {    background: rgba(255, 255, 255, 0.9);  }    /*夜间模式伪类遮罩层透明*/  [data-theme="dark"] #recent-posts > .recent-post-item {    background: #121212;  }    [data-theme="dark"] .card-widget {    background: #121212 !important;  }    [data-theme="dark"] div#post {    background: #121212 !important;  }    [data-theme="dark"] div#tag {    background: #121212 !important;  }    [data-theme="dark"] div#archive {    background: #121212 !important;  }    [data-theme="dark"] div#page {    background: #121212 !important;  }    [data-theme="dark"] div#category {    background: #121212 !important;  }    [data-theme="dark"] div#category {    background: transparent !important;  }  /* 页脚透明 */  #footer {    background: transparent !important;  }    /* 头图透明 */  #page-header {    background: transparent !important;  }    #rightside > div > button {    border-radius: 5px;  }]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>电影</title>
-      <link href="/movies/index.html"/>
-      <url>/movies/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[var urlinfo = window.location.pathname;var overtime;qq_musicpage();function qq_musicpage() {  if (urlinfo != '/music/') {    document.querySelector("#web_bg").classList.remove("bgCls");    document.getElementById('web_bg').style.backgroundImage = 'none';    document.getElementById('footer').style.display = 'flex';    document.getElementsByClassName('pace-running')[0].style.background = 'var(--global-bg)';    document.getElementsByTagName('body')[0].style.background = 'var(--global-bg)';    clearInterval(overtime);  }else {    document.querySelector("#web_bg").classList.add("bgCls");    document.getElementById('footer').style.display = 'none';    document.getElementById('content-inner').style.background = 'none';    document.getElementById('page').style.margin = 'auto';    document.getElementById('page').style.background = 'rgba(0,0,0,0)';    document.getElementsByTagName('body')[0].style.background = '#0d0d0d';    overtime = window.setInterval('setOverTime()', '500');  }  document.body.onmousedown = function(event) {    if (event.button == 0) {      var targ = event.target;        var tname = targ.tagName;       var tClassname = targ.classList[1];      var tidname = targ.id;      if (urlinfo == '/music/'){        if (tname == 'svg') {          var tsvg = targ.parentNode;          if(tsvg.classList[1] == 'aplayer-icon-menu' || tClassname == 'aplayer-icon-menu') {            setTimeout(function() {              document.getElementById('menu-mask').style.display = "block";              document.getElementById('menu-mask').style.animation = "0.5s ease 0s 1 normal none running to_show";            }, 100);          }        }else if (tname == 'path') {          var tpath = targ.parentNode;          var tpath2 = tpath.parentNode;          if(tpath2.classList[1] == 'aplayer-icon-menu') {            setTimeout(function() {              document.getElementById('menu-mask').style.display = "block";              document.getElementById('menu-mask').style.animation = "0.5s ease 0s 1 normal none running to_show";            }, 100);          }        }        if (tidname == 'menu-mask') {          var domHtml = domAplyerList();          domHtml.classList.remove("aplayer-list-hide");        }      }    }  }}function domAplyerList() {  var htmldom = document.getElementById('eo-music');  var htmldom2 = htmldom.childNodes[3];  return htmldom2;}function setOverTime() {  imgs = document.getElementById('eo-music').getElementsByClassName('aplayer-pic')[0].style.backgroundImage;  document.getElementById('web_bg').style.backgroundImage = imgs;}]]></content>
       
     </entry>
     
